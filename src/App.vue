@@ -5,7 +5,8 @@
 	<!-- <thing /> -->
 
 	<!-- <packed-circle /> -->
-	<packed-circle-two />
+	<!-- <packed-circle-two /> -->
+	<packed-circle-three />
 </template>
 
 <script lang="ts">
@@ -14,7 +15,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import Thing from './components/Thing.vue'
 import PackedCircle from './components/PackedCircle.vue'
 import PackedCircleTwo from './components/PackedCircleTwo.vue'
-
+import PackedCircleThree from './components/PackedCircleThree.vue'
 
 export default defineComponent({
 	name: 'App',
@@ -22,7 +23,8 @@ export default defineComponent({
 		HelloWorld,
 		Thing,
 		PackedCircle,
-		PackedCircleTwo
+		PackedCircleTwo,
+		PackedCircleThree
 	}
 })
 </script>

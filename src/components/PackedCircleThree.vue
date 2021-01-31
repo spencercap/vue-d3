@@ -1,5 +1,5 @@
 <template>
-	PackedCircleTwo:
+	PackedCircleThree:
 	<br />
 
 	<div class="svgSizer">
@@ -8,8 +8,8 @@
 				<circle
 					v-for="(circ, i) in circles"
 					:key="i"
-					:cx="size / 2 - circ.x"
-					:cy="size / 2 - circ.y"
+					:cx="circ.x"
+					:cy="circ.y"
 					:r="circ.r"
 					fill="rgba(255, 0, 0, 0.25)"
 				/>
@@ -29,21 +29,28 @@ type Circ = {
 };
 
 export default defineComponent({
-	name: 'PackedCircleTwo',
+	name: 'PackedCircleThree',
 	data() {
 		return {
-			size: 1200,
+			size: 1200, // px (kind of)
+			padding: 5, // px
 			radii: [] as number[],
-			// circles: [] as Circ[]
 		}
 	},
 	computed: {
 		circles(): Circ[] {
-			return d3.packSiblings(this.radii.map(r => ({ r })))
+			const circles = d3.packSiblings(this.radii.map(r => ({ r })));
+			for (const circle of circles) {
+				circle.x += this.size / 2;
+				circle.y += this.size / 2;
+				circle.r -= this.padding;
+				circle.r = Math.max(circle.r, 0); // keeps r from being negative (but some dont show becuase of this)
+			}
+			return circles;
 		}
 	},
 	mounted() {
-		console.log('PackedCircleTwo mounted');
+		console.log('PackedCircleThree mounted');
 
 		// const random = this.getRandom;
 		const random = d3.randomUniform(0, 100);
@@ -52,22 +59,6 @@ export default defineComponent({
 		const radii = d3.range(50).map(random);
 		// console.log(radii);
 		this.radii = radii;
-
-		// const circles = d3.packSiblings(radii.map(r => ({ r })));
-		// // console.log(circles);
-		// this.circles = circles;
-
-		//   for (const circle of circles) {
-		//     circle.x += width / 2;
-		//     circle.y += height / 2;
-		//     circle.r -= padding;
-		//   }
-		//   return circles;
-	},
-	methods: {
-		// getRandom(): number {
-		// 	return d3.randomUniform(0, 100);
-		// }
 	}
 })
 </script>
