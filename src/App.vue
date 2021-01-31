@@ -4,7 +4,8 @@
 
 	<!-- <thing /> -->
 
-	<packed-circle />
+	<!-- <packed-circle /> -->
+	<packed-circle-two />
 </template>
 
 <script lang="ts">
@@ -12,13 +13,16 @@ import { defineComponent } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Thing from './components/Thing.vue'
 import PackedCircle from './components/PackedCircle.vue'
+import PackedCircleTwo from './components/PackedCircleTwo.vue'
+
 
 export default defineComponent({
 	name: 'App',
 	components: {
 		HelloWorld,
 		Thing,
-		PackedCircle
+		PackedCircle,
+		PackedCircleTwo
 	}
 })
 </script>
