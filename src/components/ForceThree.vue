@@ -122,7 +122,7 @@ export default defineComponent({
 		resetDragging(node: Nodely) {
 			setTimeout(() => {
 				node.dragging = false;
-			}, 1);
+			}, 100);
 		}
 	}
 })
