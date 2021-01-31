@@ -4,12 +4,14 @@
 
 	<!-- <thing /> -->
 
-	<!-- <packed-circle /> -->
-	<!-- <packed-circle-two /> -->
-	<!-- <packed-circle-three /> -->
-	<!-- <force-one /> -->
-	<!-- <force-two /> -->
 	<force-three />
+
+	<packed-circle />
+	<packed-circle-two />
+	<packed-circle-three />
+	<force-one />
+	<force-two />
+	<!-- <force-three /> -->
 </template>
 
 <script lang="ts">
