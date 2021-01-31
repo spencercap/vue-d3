@@ -1,16 +1,15 @@
 <template>
-	ForceChart:
+	PackedCircle:
 	<br />
 
 	<div class="svgSizer">
 		<div class="svg-container">
-			<svg viewBox="-400 -400 400 400">
-				<!-- <circle cx="0" cy="0" r="400" fill="rgba(255, 0, 0, 0.25)" /> -->
+			<svg :viewBox="`0 0 ${size} ${size}`">
 				<circle
 					v-for="(circ, i) in circles"
 					:key="i"
-					:cx="circ.x"
-					:cy="circ.y"
+					:cx="size / 2 - circ.x"
+					:cy="size / 2 - circ.y"
 					:r="circ.r"
 					fill="rgba(255, 0, 0, 0.25)"
 				/>
@@ -30,23 +29,24 @@ type Circ = {
 };
 
 export default defineComponent({
-	name: 'ForceChart',
+	name: 'PackedCircle',
 	data() {
 		return {
-			circles: [] as Circ[]
+			circles: [] as Circ[],
+			size: 1200
 		}
 	},
 	mounted() {
-		console.log('ForceChart mounted');
+		console.log('PackedCircle mounted');
 
 		const random = d3.randomUniform(0, 100);
-		console.log(random);
+		// console.log(random);
 
 		const radii = d3.range(50).map(random);
-		console.log(radii);
+		// console.log(radii);
 
 		const circles = d3.packSiblings(radii.map(r => ({ r })));
-		console.log(circles);
+		// console.log(circles);
 		this.circles = circles;
 
 		//   for (const circle of circles) {

@@ -4,21 +4,21 @@
 
 	<!-- <thing /> -->
 
-	<force-chart />
+	<packed-circle />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Thing from './components/Thing.vue'
-import ForceChart from './components/ForceChart.vue'
+import PackedCircle from './components/PackedCircle.vue'
 
 export default defineComponent({
 	name: 'App',
 	components: {
 		HelloWorld,
 		Thing,
-		ForceChart
+		PackedCircle
 	}
 })
 </script>
