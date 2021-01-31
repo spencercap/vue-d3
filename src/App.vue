@@ -8,7 +8,8 @@
 	<!-- <packed-circle-two /> -->
 	<!-- <packed-circle-three /> -->
 	<!-- <force-one /> -->
-	<force-two />
+	<!-- <force-two /> -->
+	<force-three />
 </template>
 
 <script lang="ts">
@@ -20,6 +21,8 @@ import PackedCircleTwo from './components/PackedCircleTwo.vue'
 import PackedCircleThree from './components/PackedCircleThree.vue'
 import ForceOne from './components/ForceOne.vue'
 import ForceTwo from './components/ForceTwo.vue'
+import ForceThree from './components/ForceThree.vue'
+
 
 export default defineComponent({
 	name: 'App',
@@ -30,7 +33,8 @@ export default defineComponent({
 		PackedCircleTwo,
 		PackedCircleThree,
 		ForceOne,
-		ForceTwo
+		ForceTwo,
+		ForceThree
 	}
 })
 </script>
