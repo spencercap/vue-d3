@@ -2,7 +2,7 @@
 vue 3 + d3 using vite
 
 
-[demo](https://spencercap.github.io/vue-d3/index.html)
+[demo](https://spencercap.github.io/vue-d3)
 
 finding the best way to use d3 with vue3
 
